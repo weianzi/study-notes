@@ -11,3 +11,6 @@ http://facebook.github.io/react/docs/getting-started.html
 http://zhuanlan.zhihu.com/FrontendMagazine/19996445
 
 http://www.reactjs.cn/
+
+ReactJS中文视频教程
+http://react-china.org/t/reactjs/584
