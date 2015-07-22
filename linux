@@ -1,0 +1,105 @@
+查看是否安装了node
+   命令 #rpm -ql node
+        #rpm -qa |grep node
+   参数：q-询问
+         a-查询全部
+         l-显示列表
+		 
+////////////////////////////////////		 
+/etc/rc.local	
+/data/mongodb/bin/mongod --dbpath=/data/mongodb/data/db		 
+/////////////////////////////
+修改rc.local无法启动时自救
+ 
+1、使用方向键选择你希望引导的内核。 
+ 
+2、按下e键以编辑这个命令行。 
+ 
+3、选择以单词kernel起头的这行。 
+ 
+4、按下e键以编辑这个命令行。 
+ 
+5、在行末添加一个字母 S 
+ 
+6、回车接受改动。 
+ 
+7、按b键接受修改并且启动内核。 
+ 
+这样就会进入单用户模式，可以在bash下执行命令。
+ 
+此时 进入 /etc/rc.local把文件修改回来, done!		 
+/////////////////////////////////
+linux删除目录很简单，很多人还是习惯用rmdir，不过一旦目录非空，就陷入深深的苦恼之中，现在使用rm -rf命令即可。
+直接rm就可以了，不过要加两个参数-rf 即：rm -rf 目录名字
+-r 就是向下递归，不管有多少级目录，一并删除
+-f 就是直接强行删除，不作任何提示的意思
+///////////////////////////////////////////////
+vim /etc/rc.d/rc.local  自启动
+/mongodb/bin/mongod --dbpath=/mongodb/data/db --logpath=/mongodb/data/logs/log.log -fork
+//////////////////////////
+use admin
+db.createUser(
+  {
+    user: "buru",
+    pwd: "12345678",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+db.createUser({user:"ancool",pwd:"weianzi",roles:[{role:"readWrite",db:"config"},"clusterAdmin"]})
+http://ibruce.info/2015/03/03/mongodb3-auth/
+
+
+//////////////////////////////
+http://www.cnblogs.com/lhj588/archive/2012/02/15/2353139.html
+端口开放  
+/etc/sysconfig/iptables
+
+查看IP 
+ifconfig|grep 'Bcast'
+192.168.242.133
+
+/////////////////////
+export 查看当前path
+设置
+export PATH="$PATH:/usr/local/php/bin:/usr/local/mysql/bin"
+
+、、、、、、、、、、、、、、、、、
+
+
+-------------------------------------------
+ifconfig|grep 'Bcast'
+
+192.168.242.133
+/usr/local/node/bin/supervisor /home/weizian/works/github/mybaby/app
+
+
+/usr/local/node/bin/forever
+/usr/local/node/bin/node /home/weizian/works/github/mybaby/app
+/usr/local/node/bin/forever start /home/weizian/works/github/mybaby/app
+
+
+//////////////////////////
+http://tcrct.iteye.com/blog/2043644
+forever
+显示所有运行的服务  
+  
+forever list  
+  
+停止操作  
+  
+// 1. 停止所有运行的node App  
+forever stopall  
+  
+// 2. 停止其中一个node App  
+forever stop app.js  
+// 当然还可以这样  
+// forever list 找到对应的id，然后：  
+forever stop [id]  
+  
+重启操作  
+  
+重启操作跟停止操作保持一致。  
+  
+// 1. 启动所有  
+forever restartall  
