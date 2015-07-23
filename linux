@@ -1,3 +1,20 @@
+FastDFS 搭建 
+http://www.cnblogs.com/xoray007/p/3638882.html
+/////////////////////////////////
+http://www.cnblogs.com/52linux/archive/2012/03/21/2409203.html
+应该用[CTRL]+[ALT]+F2，这样就进入完全黑屏的操作，也就是象DOS那样全屏的。。如果返回桌面，应该用 [CTRL]+{ALT]+F7 
+如果想开机进入虚拟控制台，应该改一下文件 
+/etc/inittab 
+如果您想开机后，系统直接进入的是桌面，而您想让改为系统进入虚拟控制台。 
+就把下面这句中的5改成3 
+也就是把 
+id:5:initdefault: 
+改成 
+id:3:initdefault: 
+
+进入虚拟控制台后，我们可以启动桌面，和上面所说的#startx 
+
+/////////////////////////////////
 查看是否安装了node
    命令 #rpm -ql node
         #rpm -qa |grep node
@@ -6,6 +23,19 @@
          l-显示列表
 		 
 ////////////////////////////////////		 
+Centos查看端口占用情况和开启端口命令
+lsof -i tcp:80
+ 
+列出所有端口
+ 
+netstat -ntlp
+
+http://www.centoscn.com/CentOS/help/2013/0725/558.html
+service iptables restart    重启防火墙，修改生效
+端口开放  
+vi /etc/sysconfig/iptables
+
+///////////////////////////
 /etc/rc.local	
 /data/mongodb/bin/mongod --dbpath=/data/mongodb/data/db		 
 /////////////////////////////
@@ -15,7 +45,7 @@
  
 2、按下e键以编辑这个命令行。 
  
-3、选择以单词kernel起头的这行。 
+3、选择以单词kernel起头的这行。  
  
 4、按下e键以编辑这个命令行。 
  
@@ -52,8 +82,7 @@ http://ibruce.info/2015/03/03/mongodb3-auth/
 
 //////////////////////////////
 http://www.cnblogs.com/lhj588/archive/2012/02/15/2353139.html
-端口开放  
-/etc/sysconfig/iptables
+
 
 查看IP 
 ifconfig|grep 'Bcast'
@@ -70,7 +99,7 @@ export PATH="$PATH:/usr/local/php/bin:/usr/local/mysql/bin"
 -------------------------------------------
 ifconfig|grep 'Bcast'
 
-192.168.242.133
+192.168.242.134
 /usr/local/node/bin/supervisor /home/weizian/works/github/mybaby/app
 
 
@@ -82,6 +111,9 @@ ifconfig|grep 'Bcast'
 //////////////////////////
 http://tcrct.iteye.com/blog/2043644
 forever
+
+/usr/local/node/bin/supervisor app
+
 显示所有运行的服务  
   
 forever list  
