@@ -1,0 +1,12 @@
+http://microsoft.github.io/code-push/index.html
+
+
+1.  code-push register
+
+2.  Enter your access token:  登陆后得到
+
+code-push app ls
+
+code-push deployment ls ancoolApp
+
+code-push release ancoolApp /Users/ancool/Library/Developer/Xcode/DerivedData/TeaStoriesApp-diwvvjxhmsapocalsribjkbrphkg/Build/Products/Release-iphonesimulator/茶的故事.app 1.0.0 --deploymentName Production --description 'init20151231'
